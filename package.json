@@ -1,4 +1,5 @@
 {
+<<<<<<< HEAD
   "name": "momental",
   "version": "1.0.0",
   "description": "",
@@ -18,3 +19,7 @@
   },
   "homepage": "https://github.com/arnavkhanna/momental#readme"
 }
+=======
+    "type": "module"
+  }
+>>>>>>> cfa9f2a9a1fd0724a3117667be94a5eece13101b
