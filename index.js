@@ -36,4 +36,3 @@ function register_user(email,password){
     });
 }
 
-register_user("jsjs@gmail.com","12345")
