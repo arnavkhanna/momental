@@ -36,3 +36,4 @@ function register_user(email,password){
     });
 }
 
+register_user("fjskdfjkls@gmail.com","123456789")
