@@ -22,6 +22,7 @@ const firebaseConfig = {
 const app = initializeApp(firebaseConfig);
 const auth = getAuth(app);
 
+//
 function register_user(email,password){
     createUserWithEmailAndPassword(auth, email, password)
     .then((userCredential) => {
@@ -34,6 +35,21 @@ function register_user(email,password){
         const errorMessage = error.message;
         console.log(errorMessage)
     });
+} 
+function auth_email (email){
+    sendSignInLinkToEmail(auth, email, actionCodeSettings)
+    .then(() => {
+        // The link was successfully sent. Inform the user.
+        // Save the email locally so you don't need to ask the user for it again
+        // if they open the link on the same device.
+        window.localStorage.setItem('emailForSignIn', email);
+        // ...
+    })
+    .catch((error) => {
+        const errorCode = error.code;
+        const errorMessage = error.message;
+        // ...
+    });
 }
 
-register_user("fjskdfjkls@gmail.com","123456789")
+auth_email("jisolp7@gmail.com")
