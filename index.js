@@ -1,6 +1,6 @@
 // Import the functions you need from the SDKs you need
 import { initializeApp } from "firebase/app";
-import { getAnalytics } from "firebase/analytics";
+// import { getAnalytics } from "firebase/analytics";
 import { getAuth, createUserWithEmailAndPassword } from "firebase/auth";
 
 // TODO: Add SDKs for Firebase products that you want to use
@@ -32,8 +32,7 @@ function register_user(email,password){
     .catch((error) => {
         const errorCode = error.code;
         const errorMessage = error.message;
-        // ..
+        console.log(errorMessage)
     });
 }
 
-register_user("jsjs@gmail.com","12345")
