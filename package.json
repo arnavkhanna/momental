@@ -1,3 +1,25 @@
 {
+<<<<<<< HEAD
+  "name": "momental",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "type": "module",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/arnavkhanna/momental.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/arnavkhanna/momental/issues"
+  },
+  "homepage": "https://github.com/arnavkhanna/momental#readme"
+}
+=======
     "type": "module"
   }
+>>>>>>> cfa9f2a9a1fd0724a3117667be94a5eece13101b
