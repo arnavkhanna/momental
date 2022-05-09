@@ -16,5 +16,8 @@
   "bugs": {
     "url": "https://github.com/arnavkhanna/momental/issues"
   },
-  "homepage": "https://github.com/arnavkhanna/momental#readme"
+  "homepage": "https://github.com/arnavkhanna/momental#readme",
+  "dependencies": {
+    "discord.js": "^13.6.0"
+  }
 }
