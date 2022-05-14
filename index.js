@@ -1,3 +1,4 @@
+
 // Import the functions you need from the SDKs you need
 import { initializeApp } from "firebase/app";
 // import { getAnalytics } from "firebase/analytics";
@@ -25,6 +26,7 @@ const firebaseConfig = {
     measurementId: "G-MFMYW8QQPL"
   };
 
+<<<<<<< Updated upstream
   const auth = getAuth();
   auth.languageCode = 'it';
 
@@ -94,3 +96,76 @@ client.messages.create({
   to: "+14444441235",
   body: "Hello!"
 })
+=======
+// Initialize Firebase
+const app = initializeApp(firebaseConfig);
+const auth = getAuth(app);
+
+//
+function register_user(email,password){
+    createUserWithEmailAndPassword(auth, email, password)
+    .then((userCredential) => {
+        // Signed in 
+        const user = userCredential.user;
+        const actionCodeSettings = {
+            // URL you want to redirect back to. The domain (www.example.com) for this
+            // URL must be in the authorized domains list in the Firebase Console.
+            url: 'https://momental-bfee4.firebaseapp.com/__/auth/action?mode=action&oobCode=code',
+            // This must be true.
+            handleCodeInApp: true,
+            iOS: {
+              bundleId: 'com.example.ios'
+            },
+            android: {
+              packageName: 'com.example.android',
+              installApp: true,
+              minimumVersion: '12'
+            },
+            
+        };
+        sendEmailVerification(user, actionCodeSettings).catch(error => console.error(error));
+    })
+    .catch((error) => {
+        const errorCode = error.code;
+        const errorMessage = error.message;
+        console.log(errorMessage)
+    });
+} 
+
+register_user("doanbatung2000@gmail.com", "abcdefgh")
+
+function auth_email (email){
+    const actionCodeSettings = {
+        // URL you want to redirect back to. The domain (www.example.com) for this
+        // URL must be in the authorized domains list in the Firebase Console.
+        url: 'https://momental-bfee4.firebaseapp.com/__/auth/action?mode=action&oobCode=code',
+        // This must be true.
+        handleCodeInApp: true,
+        iOS: {
+          bundleId: 'com.example.ios'
+        },
+        android: {
+          packageName: 'com.example.android',
+          installApp: true,
+          minimumVersion: '12'
+        },
+    };
+    sendSignInLinkToEmail(auth, email, actionCodeSettings)
+    .then(() => {
+        // The link was successfully sent. Inform the user.
+        // Save the email locally so you don't need to ask the user for it again
+        // if they open the link on the same device.
+        window.localStorage.setItem('emailForSignIn', email);
+        // ...
+    })
+    .catch((error) => {
+        const errorCode = error.code;
+        const errorMessage = error.message;
+        console.error(error);
+    });
+}
+
+
+
+register_user("groberg@ucsd.edu", "apple123");
+>>>>>>> Stashed changes
