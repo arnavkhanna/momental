@@ -18,6 +18,7 @@
   },
   "homepage": "https://github.com/arnavkhanna/momental#readme",
   "dependencies": {
+    "antd": "^4.20.4",
     "discord.js": "^13.6.0"
   }
 }
