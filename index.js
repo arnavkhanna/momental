@@ -26,77 +26,6 @@ const firebaseConfig = {
     measurementId: "G-MFMYW8QQPL"
   };
 
-<<<<<<< Updated upstream
-  const auth = getAuth();
-  auth.languageCode = 'it';
-
-  window.recaptchaVerifier = new RecaptchaVerifier('sign-in-button', {
-  'size': 'invisible',
-  'callback': (response) => {
-    // reCAPTCHA solved, allow signInWithPhoneNumber.
-    onSignInSubmit();
-  }
-}, auth);
-window.recaptchaVerifier = new RecaptchaVerifier('recaptcha-container', {}, auth);
-
-const phoneNumber = getPhoneNumberFromUserInput();
-const appVerifier = window.recaptchaVerifier;
-
-const auth = getAuth();
-signInWithPhoneNumber(auth, phoneNumber, appVerifier)
-    .then((confirmationResult) => {
-      // SMS sent. Prompt user to type the code from the message, then sign the
-      // user in with confirmationResult.confirm(code).
-      window.confirmationResult = confirmationResult;
-      // ...
-    }).catch((error) => {
-      // Error; SMS not sent
-      // ...
-    });
-// // Initialize Firebase
-// const app = initializeApp(firebaseConfig);
-// const auth = getAuth(app);
-
-// //
-// function register_user(email,password){
-//     createUserWithEmailAndPassword(auth, email, password)
-//     .then((userCredential) => {
-//         // Signed in 
-//         const user = userCredential.user;
-//         const actionCodeSettings = {
-//             // URL you want to redirect back to. The domain (www.example.com) for this
-//             // URL must be in the authorized domains list in the Firebase Console.
-//             url: 'https://momental-bfee4.firebaseapp.com/__/auth/action?mode=action&oobCode=code',
-//             // This must be true.
-//             handleCodeInApp: true,
-//             iOS: {
-//               bundleId: 'com.example.ios'
-//             },
-//             android: {
-//               packageName: 'com.example.android',
-//               installApp: true,
-//               minimumVersion: '12'
-//             },
-            
-//         };
-//         sendEmailVerification(user, actionCodeSettings).catch(error => console.error(error));
-//     })
-//     .catch((error) => {
-//         const errorCode = error.code;
-//         const errorMessage = error.message;
-//         console.log(errorMessage)
-//     });
-// } 
-
-// using twillio 
-
-const client = require("twilio")();
-client.messages.create({
-  from: "+15555551234",
-  to: "+14444441235",
-  body: "Hello!"
-})
-=======
 // Initialize Firebase
 const app = initializeApp(firebaseConfig);
 const auth = getAuth(app);
@@ -167,5 +96,4 @@ function auth_email (email){
 
 
 
-register_user("groberg@ucsd.edu", "apple123");
->>>>>>> Stashed changes
+register_user("aufisodufo@ucsd.edu", "apple123");
