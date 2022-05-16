@@ -1,17 +1,15 @@
 import React from "react"
 import "./style.css"
+import { useNavigate, useParams } from "react-router-dom";
 
 
 const NavBar = (props) =>{
     
-
-
-
     return(
         <nav className={`main-nav ${props.style}`}>
 
-            <div class="top_middle">
-                <h1 class="heading"> My Mood Calendar </h1>
+            <div className="top_middle">
+                <h1 className="heading"> My Mood Calendar </h1>
             </div>
 
             <div className="top_left">
@@ -36,7 +34,7 @@ const NavBar = (props) =>{
                     <span className="friends"></span><br />
                 </p>
 
-                <a className= "profile_link" href="C:\Users\Owner\Desktop\Momental(old)\momental\frontend\src\views\recording"> 
+                <a className= "recording_link" href="C:\Users\Owner\Desktop\Momental(old)\momental\frontend\src\views\recording\index.js"> 
                     <p style={{color: "#070506"}} >
                         <span className="iconify" data-icon="bi:mic-fill"></span><br />
                         <span className="microphone"></span><br />

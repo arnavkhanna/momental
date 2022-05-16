@@ -1,0 +1,12 @@
+@import '~antd/dist/antd.css';
+
+.post-form {
+  top: 100px;
+  left: 100px;
+  position: relative;
+  text-align: center;
+  
+}
+
+
+
