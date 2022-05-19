@@ -9,7 +9,7 @@ const NavBar = (props) =>{
         <nav className={`main-nav ${props.style}`}>
 
             <div className="top_middle">
-                <h1 className="heading"> My Mood Calendar </h1>
+                <h1 className="heading"> Recording </h1>
             </div>
 
             <div className="top_left">
