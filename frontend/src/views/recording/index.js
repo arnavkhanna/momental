@@ -13,6 +13,12 @@ const Recording = () => {
   return(
     <>
     <NavBar/>
+    <div className="top_middle">
+                <h1 className="heading"> Recording </h1>
+            </div>
+            <div className="top_left" >
+                 <h2 className="logo">Momental</h2>
+            </div>
     <div className='post-form'>
       <h2>Post a Moment</h2>
       <form>

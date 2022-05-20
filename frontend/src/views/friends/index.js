@@ -1,13 +1,13 @@
-import React from "react"
+import React from "react";
 import "./style.css";
-import NavBar from "../../components/NavBar"
+import NavBar from "../../components/NavBar";
 
-const Calendar = () =>{
+const Friends = () =>{
     return(
         <div>
             <NavBar/>
             <div className="top_middle">
-                <h1 className="heading"> Calendar </h1>
+                <h1 className="heading"> Friends </h1>
             </div>
             <div className="top_left" >
                  <h2 className="logo">Momental</h2>
@@ -15,4 +15,4 @@ const Calendar = () =>{
         </div>
     )
 }
-export default Calendar
+export default Friends

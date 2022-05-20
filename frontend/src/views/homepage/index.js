@@ -6,6 +6,12 @@ const HomePage = () =>{
     return(
         <div>
             <NavBar/>
+            <div className="top_middle">
+                <h1 className="heading"> Home </h1>
+            </div>
+            <div className="top_left" >
+                 <h2 className="logo">Momental</h2>
+            </div>
         </div>
     )
 }
