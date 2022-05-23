@@ -1,4 +1,12 @@
-@import url('https://fonts.googleapis.com/css2?family=Imprima&family=Simonetta&display=swap');
+@import '~antd/dist/antd.css';
+
+.post-form {
+  top: 100px;
+  left: 150px;
+  position: relative;
+  text-align: left;
+
+  @import url('https://fonts.googleapis.com/css2?family=Imprima&family=Simonetta&display=swap');
 
 /* 
 .main_page{
@@ -20,12 +28,12 @@
 .heading{
     font-family: 'Simonetta';
     font-style: normal;
+    font-size: xx-large;
     position: absolute;
     color: white;
     left: 350px;
     text-align: center;
     top: 10px;
-
 }
 
 .top_left{
@@ -33,7 +41,7 @@
     left: 0px;
     top: 0px;
     height: 100px;
-    background-color: #6C5141;
+    background-color: #53A1A3;
     width: 120px;
     text-align: center;
 }
@@ -43,20 +51,20 @@
     top: 0px;
     left: 0px;
     height: 100px;
-    background-color: #D7BFA4;
+    background-color: #A4C3C6;
     width: 1440px;
     text-align: center;
 }
 
 .sidebar{
     position: absolute;
-    width: 100px;
-    background-color: #D7BFA4;
+    width: 120px;
+    background-color:  #A4C3C6;
     height: 100%;
     left: 0px;
-    top: 100px;
-    
+    top: 0px;
 }
+
 
  .calendar {
     display: inline-block;
@@ -101,3 +109,10 @@
     background: url('https://api.iconify.design/fa6-solid/microphone.svg') no-repeat 
     center center / contain;
  }
+
+}
+
+
+
+
+
