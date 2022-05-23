@@ -1,12 +1,14 @@
 import { render } from '@testing-library/react';
 import { Form, Input, Button, Checkbox, Rate } from 'antd';
-import React, { useState } from 'react';
+import React, { useState, Component } from 'react';
 import NavBar from 'C:/Users/Owner/Desktop/Momental/momental/frontend/src/components/NavBar';
 import "./style.css";
+import MicRecorder from 'mic-recorder-to-mp3';
+
 
 const current = new Date();
 const date = `${current.getMonth()+1}/${current.getDate()}/${current.getFullYear()}`;
-
+const Mp3Recorder = new MicRecorder({ bitRate: 128 });
 
 const Recording = () => {
 
@@ -14,11 +16,12 @@ const Recording = () => {
     <>
     <NavBar/>
     <div className="top_middle">
-                <h1 className="heading"> Recording </h1>
-            </div>
-            <div className="top_left" >
-                 <h2 className="logo">Momental</h2>
-            </div>
+        <h1 className="heading"> Recording </h1>
+    </div>
+    <div className="top_left" >
+        <h2 className="logo">Momental</h2>
+      </div>
+
     <div className='post-form'>
       <h2>Post a Moment</h2>
       <form>
@@ -61,8 +64,10 @@ const Recording = () => {
       </form>
       
     </div>
+    
     </>
   );
+  
 };
 
 

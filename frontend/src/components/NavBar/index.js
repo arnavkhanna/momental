@@ -5,50 +5,38 @@ import { useNavigate} from "react-router-dom";
 
 const NavBar = (props) =>{
     let navigate = useNavigate();
-
-    function redirectHome() {
-        navigate("/");
-    }
     
     return(
         <nav className={`main-nav ${props.style}`}>
             
             <div className="sidebar">
                 <a className= "calendar_link">
-                    <li onClick={()=>navigate("/calendar")}>
-                        <p style={{color: "#e409a2"}}>
-                            <span className="iconify" data-icon="bi:cal-fill"></span><br />
-                            <span className="calendar"></span><br />
-                        </p>
-                    </li>
+                    <p style={{color: "#e409a2"}} onClick={()=>navigate("/calendar")}>
+                        <span className="iconify" data-icon="bi:cal-fill"></span><br />
+                        <span className="calendar"></span><br />
+                     </p>
                 </a>
 
                 <a className= "profile_link">
-                    <li onClick={()=>navigate("/profile")}>
-                        <p style={{color: "#e409a2"}}>
-                            <span className="iconify" data-icon="bi:prof-fill"></span><br />
-                            <span className="profile"></span><br />
-                        </p>
-                    </li>
+                    <p style={{color: "#e409a2"}} onClick={()=>navigate("/profile")}>
+                        <span className="iconify" data-icon="bi:prof-fill"></span><br />
+                        <span className="profile"></span><br />
+                    </p>
                 </a>
 
                 <a className= "friends_link" >
-                    <li onClick={()=>navigate("/friends")}>
-                        <p style={{color: "#e409a2"}}>
-                            <span className="iconify" data-icon="bi:frie-fill"></span><br />
-                            <span className="friends"></span><br />
-                        </p>
-                    </li>
+                     <p style={{color: "#e409a2"}} onClick={()=>navigate("/friends")}>
+                        <span className="iconify" data-icon="bi:frie-fill"></span><br />
+                        <span className="friends"></span><br />
+                    </p>
                 </a>
 
                 <a className= "recording_link" >
-                    <li onClick={()=>navigate("/recording")}>
-                        <p style={{color: "#070506"}} >
-                            <span className="iconify" data-icon="bi:mic-fill"></span><br />
-                            <span className="microphone"></span><br />
-                            
-                        </p>
-                    </li>
+                    <p style={{color: "#070506"}} onClick={()=>navigate("/recording")}>
+                        <span className="iconify" data-icon="bi:mic-fill"></span><br />
+                        <span className="microphone"></span><br />    
+                    </p>
+    
                 </a>
             </div>
             
