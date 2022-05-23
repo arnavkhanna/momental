@@ -3,7 +3,7 @@ import NavBar from "../../components/NavBar";
 import DatePicker from 'react-datepicker';
 import "react-datepicker/dist/react-datepicker.css";
 import "./style.css"
-
+import axios from 'axios';
 export default class CreatePost extends Component {
     constructor(props) {
         super(props);
@@ -51,15 +51,18 @@ export default class CreatePost extends Component {
         e.preventDefault();
 
         const recording = {
-            username: this.state.username,
+            username: "roach",
             title: this.state.title,
             description: this.state.description,
             date: this.state.date,
             mood: this.state.mood
-            
+             
         }
 
-        console.log(recording)
+        console.log(recording);
+        
+        axios.post('http://localhost:5000/recordings/add',recording)
+        .then(res => console.log(res.data));
     }
 
     
