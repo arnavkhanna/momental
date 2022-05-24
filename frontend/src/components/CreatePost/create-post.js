@@ -17,7 +17,7 @@ export default class CreatePost extends Component {
             title: "",
             description: "", 
             date: new Date(),
-            mood: 0
+            mood: 1
         }
 
     }
@@ -76,7 +76,7 @@ export default class CreatePost extends Component {
             </div>
             <div className="top_left" >
                 <h2 className="logo">Momental</h2>
-              </div>
+            </div>
         
             <div className='post-form'>
               <h2>Post a Moment</h2>

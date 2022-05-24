@@ -47,20 +47,20 @@ export default class RecordingsList extends Component {
           <div>
             <NavBar/>
             <div className="top_middle">
-                <h1 className="heading"> Friends </h1>
+                <h1 className="heading"> Feed </h1>
             </div>
             <div className="top_left" >
                  <h2 className="logo">Momental</h2>
             </div>
-            <thead className="thead-light">
+            <div className="page-body">
               <tr>
                 <th>Username</th>
                 <th>Description</th>
                 <th>Rating</th>
                 <th>Date</th>
               </tr>
-            </thead>
-            <tbody>
+            </div>
+            <tbody className="table-body">
               { this.recordingsList() }
             </tbody>
           </div>

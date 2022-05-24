@@ -7,6 +7,7 @@ import Calendar  from './views/mycalendar/index.js';
 import Profile from "./views/profile/index.js";
 import Friends from "./components/ViewPosts/view-posts.js";
 import CreatePost from './components/CreatePost/create-post.js';
+import AddFriend from './components/AddFriends/AddFriend';
 
 function App() {
   return (
@@ -18,15 +19,15 @@ function App() {
           />
           <Route
             path = "/calendar"
-            element = {<Calendar/>}
+            element = {<Friends/>}
           />
           <Route
             path = "/profile"
-            element = {<Profile/>}
+            element = {<Calendar/>}
           />
           <Route
             path = "/friends"
-            element = {<Friends/>}
+            element = {<AddFriend/>}
           />
           <Route
             path = "/recording"
