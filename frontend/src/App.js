@@ -5,7 +5,7 @@ import HomePage  from './views/homepage';
 import Calendar  from './views/mycalendar/index.js';
 //import Recording from './views/recording/index.js';
 import Profile from "./views/profile/index.js";
-import Friends from "./views/friends/index.js";
+import Friends from "./components/ViewPosts/view-posts.js";
 import CreatePost from './components/CreatePost/create-post.js';
 
 function App() {
