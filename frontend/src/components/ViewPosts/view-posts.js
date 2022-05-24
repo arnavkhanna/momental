@@ -1,7 +1,7 @@
 import React, {Component} from 'react';
-import {Link} from 'react-router-dom';
 import axios from 'axios';
 import NavBar from "../../components/NavBar";
+import { useTable } from "react-table";
 import "./style.css"
 
 const Recording = props => (
@@ -11,9 +11,7 @@ const Recording = props => (
         <td>{props.recording.description}</td>
         <td>{props.recording.rating}</td>
         <td>{props.recording.date.substring(0,10)}</td>
-        <td>
-          <a href="#" onClick={() => { props.playRecording(props.recording._id) }}>Play</a>
-        </td>
+        
 
     </tr>
 )
@@ -51,18 +49,23 @@ export default class RecordingsList extends Component {
             </div>
             <div className="top_left" >
                  <h2 className="logo">Momental</h2>
+            </div> 
+            <div className="page-body">
+              <table>
+                <thead>
+                  <tr>
+                    <th>Date   </th>
+                    <th>Username   </th>
+                    <th>Title   </th>
+                    <th>Description   </th>
+                    <th>Mood   </th>
+                  </tr>
+                </thead>
+                <tbody>
+                  { this.recordingsList() }
+                </tbody>
+              </table>
             </div>
-            <thead className="thead-light">
-              <tr>
-                <th>Username</th>
-                <th>Description</th>
-                <th>Rating</th>
-                <th>Date</th>
-              </tr>
-            </thead>
-            <tbody>
-              { this.recordingsList() }
-            </tbody>
           </div>
             
     
