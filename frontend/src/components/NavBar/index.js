@@ -1,5 +1,5 @@
 import React from "react"
-import "./style.css"
+import "C:/Users/Owner/Desktop/momental-frontend/momental/frontend/src/components/NavBar/style.css"
 import { useNavigate} from "react-router-dom";
 
 
