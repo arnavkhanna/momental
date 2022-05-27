@@ -7,6 +7,7 @@ import axios from 'axios';
 export default class CreatePost extends Component {
     constructor(props) {
         super(props);
+        this.onChangeUsername = this.onChangeUsername.bind(this);
         this.onChangeTitle = this.onChangeTitle.bind(this);
         this.onChangeDescription = this.onChangeDescription.bind(this);
         this.onChangeMood = this.onChangeMood.bind(this);
@@ -14,6 +15,8 @@ export default class CreatePost extends Component {
         this.onSubmit = this.onSubmit.bind(this);
 
         this.state = {
+            file: null,
+            username: "",
             title: "",
             description: "", 
             date: new Date(),
@@ -22,6 +25,11 @@ export default class CreatePost extends Component {
 
     }
 
+    onChangeUsername(e){
+        this.setState({
+            username: e.target.value
+        });
+    }
     
     onChangeTitle(e){
         this.setState({
@@ -51,7 +59,7 @@ export default class CreatePost extends Component {
         e.preventDefault();
 
         const recording = {
-            username: "roach",
+            username: this.state.username,
             title: this.state.title,
             description: this.state.description,
             date: this.state.date,
@@ -82,6 +90,15 @@ export default class CreatePost extends Component {
               <h2>Post a Moment</h2>
               <form onSubmit={this.onSubmit}>
               <button>Record</button>
+              <br></br>
+              <br></br>
+                <label>Username:  </label>
+                <input
+                    type="text"
+                    required
+                    value={this.state.username}
+                    onChange={this.onChangeUsername}
+                />
               <br></br>
               <br></br>
                 <label>Title:  </label>
