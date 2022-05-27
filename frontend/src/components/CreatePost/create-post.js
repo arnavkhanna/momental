@@ -4,10 +4,13 @@ import DatePicker from 'react-datepicker';
 import "react-datepicker/dist/react-datepicker.css";
 import "./style.css"
 import axios from 'axios';
+import FileUploader from "C:/Users/Owner/Desktop/momental-frontend/momental/frontend/src/components/CreatePost/FileUploader.js"
+
 export default class CreatePost extends Component {
     constructor(props) {
         super(props);
         this.onChangeUsername = this.onChangeUsername.bind(this);
+        this.onChangeFile = this.onChangeFile.bind(this);
         this.onChangeTitle = this.onChangeTitle.bind(this);
         this.onChangeDescription = this.onChangeDescription.bind(this);
         this.onChangeMood = this.onChangeMood.bind(this);
@@ -23,6 +26,11 @@ export default class CreatePost extends Component {
             mood: 0
         }
 
+    }
+    onChangeFile(e){
+        this.setState({
+            file: e.target.value
+        });
     }
 
     onChangeUsername(e){
@@ -59,6 +67,7 @@ export default class CreatePost extends Component {
         e.preventDefault();
 
         const recording = {
+            file: this.state.file,
             username: this.state.username,
             title: this.state.title,
             description: this.state.description,
@@ -89,7 +98,7 @@ export default class CreatePost extends Component {
             <div className='post-form'>
               <h2>Post a Moment</h2>
               <form onSubmit={this.onSubmit}>
-              <button>Record</button>
+              <FileUploader/>
               <br></br>
               <br></br>
                 <label>Username:  </label>

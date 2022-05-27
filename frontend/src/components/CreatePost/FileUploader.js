@@ -13,7 +13,7 @@ const FileUploader = props => {
   // to handle the user-selected file 
   const handleChange = event => {
     const fileUploaded = event.target.files[0];
-    props.onChange(fileUploaded);
+    
   };
   return (
     <>
