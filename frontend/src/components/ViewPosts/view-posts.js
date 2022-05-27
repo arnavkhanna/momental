@@ -14,7 +14,7 @@ const Recording = props => (
         <td>{props.recording.rating}</td>
         <td>{props.recording.date.substring(0,10)}</td>
         <td>
-          <a href="#" onClick={() => { props.playRecording(props.recording._id) }}>Play</a>
+          <a href="#" onClick={() => {props.getUsername(props.recording.username)}}>Play</a>
         </td>
 
     </tr>
@@ -24,7 +24,7 @@ export default class RecordingsList extends Component {
     constructor(props) {
         super(props);
 
-        this.state = {recordings: []};
+        this.state = {recordings: [], username: ""};
 
     }
 
@@ -40,8 +40,12 @@ export default class RecordingsList extends Component {
 
       recordingsList() {
         return this.state.recordings.map(currentrecording => {
-          return <Recording recording={currentrecording} key={currentrecording._id}/>;
+          return <Recording getUsername={this.getUsername} recording={currentrecording} key={currentrecording._id}/>;
         })
+      }
+
+      getUsername(name) {
+        this.setState({username: name})
       }
 
       render() {
@@ -55,7 +59,8 @@ export default class RecordingsList extends Component {
                  <h2 className="logo">Momental</h2>
             </div>
             <div className = "current-name-date"> 
-
+                {/**this is where the selected username and date will appear */}
+                {this.state.username}
             </div>
             <div className = "audio-player">
               <Player/>
