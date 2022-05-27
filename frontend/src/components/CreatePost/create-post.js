@@ -4,7 +4,7 @@ import DatePicker from 'react-datepicker';
 import "react-datepicker/dist/react-datepicker.css";
 import "./style.css"
 import axios from 'axios';
-import FileUploader from "C:/Users/Owner/Desktop/momental-frontend/momental/frontend/src/components/CreatePost/FileUploader.js"
+import FileUploader from "./FileUploader.js";
 
 export default class CreatePost extends Component {
     constructor(props) {
@@ -29,7 +29,7 @@ export default class CreatePost extends Component {
     }
     onChangeFile(e){
         this.setState({
-            file: e.target.value
+            file: e
         });
     }
 
@@ -98,7 +98,7 @@ export default class CreatePost extends Component {
             <div className='post-form'>
               <h2>Post a Moment</h2>
               <form onSubmit={this.onSubmit}>
-              <FileUploader/>
+              <FileUploader onChangeFile={this.onChangeFile}/>
               <br></br>
               <br></br>
                 <label>Username:  </label>
