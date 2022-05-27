@@ -103,13 +103,20 @@
     
  }
 
- .page-body {
+ .page-body{
+    display: inline-block;
+    position: absolute;
+    left: 200px;
+    top: 100px;
+    font-size: 20px;
+    border-spacing: 50px, 50px;
+    font-family: 'Simonetta';
+ }
+
+ .table-body{
      position: absolute;
-     left: 200px;
-     top:100px;
-     width: 40em;
-     font-size: 20px;
-     font-family: 'Simonetta';
-     font-style: normal;
-     
+     left:200px;
+     top: 150px;
+     border-spacing: 40px;
+
  }
