@@ -1,8 +1,9 @@
 import React, {Component} from 'react';
+import {Link} from 'react-router-dom';
 import axios from 'axios';
 import NavBar from "../../components/NavBar";
-import { useTable } from "react-table";
 import "./style.css"
+import Player  from "./audio-player.js";
 
 const Recording = props => (
     <tr>
@@ -11,7 +12,9 @@ const Recording = props => (
         <td>{props.recording.description}</td>
         <td>{props.recording.rating}</td>
         <td>{props.recording.date.substring(0,10)}</td>
-        
+        <td>
+          <a href="#" onClick={() => { props.playRecording(props.recording._id) }}>Play</a>
+        </td>
 
     </tr>
 )
@@ -45,27 +48,27 @@ export default class RecordingsList extends Component {
           <div>
             <NavBar/>
             <div className="top_middle">
-                <h1 className="heading"> Friends </h1>
+                <h1 className="heading"> Feed </h1>
             </div>
             <div className="top_left" >
                  <h2 className="logo">Momental</h2>
-            </div> 
-            <div className="page-body">
-              <table>
-                <thead>
-                  <tr>
-                    <th>Date   </th>
-                    <th>Username   </th>
-                    <th>Title   </th>
-                    <th>Description   </th>
-                    <th>Mood   </th>
-                  </tr>
-                </thead>
-                <tbody>
-                  { this.recordingsList() }
-                </tbody>
-              </table>
             </div>
+            <div className = "audio-player">
+              <h2> Play Audio </h2>
+              <Player/>
+            </div>
+            <div className="page-body">
+              <tr>
+                <th>Username</th>
+                <th>Date</th>
+                <th>Title</th>
+                <th>Description</th>
+                <th>Mood</th>
+              </tr>
+            </div>
+            <tbody className="table-body">
+              { this.recordingsList() }
+            </tbody>
           </div>
             
     

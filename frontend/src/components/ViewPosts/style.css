@@ -116,7 +116,14 @@
  .table-body{
      position: absolute;
      left:200px;
-     top: 150px;
+     top: 20px;
      border-spacing: 40px;
+
+ }
+
+ .audio-player {
+     position: absolute;
+     left: 600px;
+     top: 100px;
 
  }
