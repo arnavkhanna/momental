@@ -17,20 +17,53 @@ export default class CreatePost extends Component {
         this.onChangeDate = this.onChangeDate.bind(this);
         this.onSubmit = this.onSubmit.bind(this);
 
+        this.fileUpload.bind(this);
+
         this.state = {
             file: null,
             username: "",
             title: "",
             description: "", 
             date: new Date(),
-            mood: 0
+            mood: 1,
+            //audio: []
         }
 
     }
+
+    // componentDidMount() {
+    //         console.log("index");
+    //         axios.get('http://localhost:5000/recordings/audio/2ec24fd39ad437e4c3f918caef153cb0.m4a')
+    //           .then(response => {
+    //             console.log('1');
+    //             this.setState({ audio: response.data })
+    //             console.log('2');
+    //           })
+    //           .catch((error) => {
+    //             console.log(error);
+    //           })
+    //       }
+
     onChangeFile(e){
         this.setState({
-            file: e
+            file: e//.target.files[0]
         });
+    }
+
+    fileUpload(file) {
+        const url = "http://localhost:5000/recordings/upload"
+        const formData = new FormData();
+        formData.append('file', file)
+        const config = {
+            headers: {
+                'content-type': 'multipart/form-data'
+            }
+        }
+        
+        axios.post('http://localhost:5000/recordings/upload', formData, config)
+        .then(res => console.log(res.data));
+
+        //return post(url, formData, config)
     }
 
     onChangeUsername(e){
@@ -65,6 +98,8 @@ export default class CreatePost extends Component {
 
     onSubmit(e) {
         e.preventDefault();
+
+        this.fileUpload(this.state.file);
 
         const recording = {
             file: this.state.file,
