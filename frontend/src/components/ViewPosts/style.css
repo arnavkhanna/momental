@@ -23,7 +23,7 @@
     font-style: normal;
     position: absolute;
     color: white;
-    left: 350px;
+    left: 400px;
     text-align: center;
     top: 20px;
 }
@@ -64,8 +64,7 @@
     height: 4em;
     left: 30px;
     top: 50px;
-    background: url('https://api.iconify.design/akar-icons/calendar.svg') no-repeat
-    center center / contain;
+    background: url('https://api.iconify.design/akar-icons/calendar.svg?color=%23eee') no-repeat center center / contain;
  }
  
  .profile {
@@ -75,8 +74,8 @@
     height: 4em;
     left: 30px;
     top: 180px;
-    background: url('https://api.iconify.design/iconoir/profile-circled.svg') no-repeat 
-    center center / contain;
+    background: url('https://api.iconify.design/iconoir/profile-circled.svg?color=%23eee') no-repeat center center / contain;
+
  }
 
  .friends {
@@ -86,8 +85,8 @@
     height: 4em;
     left: 30px;
     top: 300px;
-    background: url('https://api.iconify.design/fa-solid/user-friends.svg') no-repeat 
-    center center / contain;
+    background: url('https://api.iconify.design/fa-solid/user-friends.svg?color=%23eee') no-repeat center center / contain;
+
  }
 
  .microphone {
@@ -97,33 +96,31 @@
     height: 4em;
     left: 30px;
     top: 430px;
-    background: url('https://api.iconify.design/fa6-solid/microphone.svg') no-repeat 
-    center center / contain;
-    color: white;
+    background: url('https://api.iconify.design/carbon/microphone.svg?color=%23eee') no-repeat center center / contain;
     
  }
 
  .page-body{
     display: inline-block;
     position: absolute;
-    left: 200px;
-    top: 100px;
+    left: 170px;
+    top: 250px;
     font-size: 20px;
-    border-spacing: 50px, 50px;
+    border-spacing: 40px;
     font-family: 'Simonetta';
  }
 
  .table-body{
      position: absolute;
-     left:200px;
-     top: 20px;
+     left:300px;
+     top: 100px;
      border-spacing: 40px;
 
  }
 
  .audio-player {
      position: absolute;
-     left: 600px;
-     top: 100px;
+     left: 300px;
+     top: 200px;
 
  }

@@ -5,6 +5,7 @@ import NavBar from "../../components/NavBar";
 import "./style.css"
 import Player  from "./audio-player.js";
 
+
 const Recording = props => (
     <tr>
         <td>{props.recording.username}</td>
@@ -53,8 +54,10 @@ export default class RecordingsList extends Component {
             <div className="top_left" >
                  <h2 className="logo">Momental</h2>
             </div>
+            <div className = "current-name-date"> 
+
+            </div>
             <div className = "audio-player">
-              <h2> Play Audio </h2>
               <Player/>
             </div>
             <div className="page-body">

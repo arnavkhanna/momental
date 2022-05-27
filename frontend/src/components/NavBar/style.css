@@ -95,9 +95,8 @@
     width: 4em;
     height: 4em;
     left: 30px;
-    top: 0px;
-    background: url('https://api.iconify.design/fa6-solid/microphone.svg') no-repeat 
-    center center / contain;
+    top: 430px;
+    background: url('https://api.iconify.design/carbon/microphone.svg?color=%23eee') no-repeat center center / contain;
 
     
  }
