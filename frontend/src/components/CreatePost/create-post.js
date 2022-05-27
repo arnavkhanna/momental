@@ -6,6 +6,7 @@ import "./style.css"
 import axios from 'axios';
 import FileUploader from "C:/Users/Owner/Desktop/momental-frontend/momental/frontend/src/components/CreatePost/FileUploader.js"
 
+
 export default class CreatePost extends Component {
     constructor(props) {
         super(props);
@@ -82,6 +83,8 @@ export default class CreatePost extends Component {
         .then(res => console.log(res.data));
     }
 
+
+
     
 
     render() {
@@ -96,12 +99,12 @@ export default class CreatePost extends Component {
               </div>
         
             <div className='post-form'>
-              <h2>Post a Moment</h2>
+              <h2 className= "post-moment">Post a Moment</h2>
               <form onSubmit={this.onSubmit}>
               <FileUploader/>
               <br></br>
               <br></br>
-                <label>Username:  </label>
+                <label className = "username">Username:  </label>
                 <input
                     type="text"
                     required
@@ -110,7 +113,7 @@ export default class CreatePost extends Component {
                 />
               <br></br>
               <br></br>
-                <label>Title:  </label>
+                <label className = "title">Title:  </label>
                 <input
                     type="text"
                     required
@@ -120,7 +123,7 @@ export default class CreatePost extends Component {
                 <br></br>
                 <br></br>
 
-                <label>Date: </label>
+                <label className = "date">Date: </label>
                 <div>
                     <DatePicker
                     selected={this.state.date}
@@ -130,7 +133,7 @@ export default class CreatePost extends Component {
                 
                 <br></br>
                 <br></br>
-                <label>Description:  </label>
+                <label className = "description">Link:  </label>
                 <input
                     type="text"
                     required
@@ -139,7 +142,7 @@ export default class CreatePost extends Component {
                 />
                 <br></br>
                 <br></br>
-                <label> Mood : </label>
+                <label className = "mood"> Mood : </label>
                 <select ref="userInput"
                     required
                     value={this.state.mood}
@@ -159,7 +162,7 @@ export default class CreatePost extends Component {
                     
                   <br></br>
                   <br></br>
-                <button>Post</button>
+                <button className = "post-button">Post</button>
               </form>
               
             </div>

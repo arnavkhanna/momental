@@ -46,6 +46,32 @@
     font-family: 'Simonetta';
  }
 
+ .username {
+    font-family: 'Simonetta';
+ }
+
+ .date {
+    font-family: 'Simonetta';
+ }
+
+ .title {
+    font-family: 'Simonetta';
+ }
+
+ .description {
+    font-family: 'Simonetta';
+ }
+
+ .mood {
+    font-family: 'Simonetta';
+ }
+
+ .post-button {
+    font-family: 'Simonetta';
+    color: white;
+    background-color: #859AAF;
+ }
+
 
 
 
