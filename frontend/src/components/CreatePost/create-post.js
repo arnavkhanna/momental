@@ -17,7 +17,7 @@ export default class CreatePost extends Component {
         this.onChangeDate = this.onChangeDate.bind(this);
         this.onSubmit = this.onSubmit.bind(this);
 
-        this.fileUpload.bind(this);
+        //this.fileUpload.bind(this);
 
         this.state = {
             file: null,
@@ -31,27 +31,15 @@ export default class CreatePost extends Component {
 
     }
 
-    // componentDidMount() {
-    //         console.log("index");
-    //         axios.get('http://localhost:5000/recordings/audio/2ec24fd39ad437e4c3f918caef153cb0.m4a')
-    //           .then(response => {
-    //             console.log('1');
-    //             this.setState({ audio: response.data })
-    //             console.log('2');
-    //           })
-    //           .catch((error) => {
-    //             console.log(error);
-    //           })
-    //       }
-
+    
     onChangeFile(e){
         this.setState({
             file: e//.target.files[0]
         });
     }
 
-    fileUpload(file) {
-        const url = "http://localhost:5000/recordings/upload"
+    fileUpload(file, callback) {
+        const url = "http://momental.dev:5000/recordings/upload"
         const formData = new FormData();
         formData.append('file', file)
         const config = {
@@ -60,8 +48,11 @@ export default class CreatePost extends Component {
             }
         }
         
-        axios.post('http://localhost:5000/recordings/upload', formData, config)
-        .then(res => console.log(res.data));
+        axios.post('http://momental.dev:5000/recordings/upload', formData, config)
+        .then(res => {
+            console.log(res.data)
+            callback(res.data);
+        });
 
         //return post(url, formData, config)
     }
@@ -99,22 +90,27 @@ export default class CreatePost extends Component {
     onSubmit(e) {
         e.preventDefault();
 
-        this.fileUpload(this.state.file);
+        this.fileUpload(this.state.file, (data) => {
+            const recording = {
+                file: this.state.file,
+                username: this.state.username,
+                title: this.state.title,
+                description: this.state.description,
+                date: this.state.date,
+                mood: this.state.mood,
+                filename: data.filename
+                 
+            }
+    
+            console.log(recording);
+            
+            axios.post('http://momental.dev:5000/recordings/add',recording)
+            .then(res => console.log(res.data));
 
-        const recording = {
-            file: this.state.file,
-            username: this.state.username,
-            title: this.state.title,
-            description: this.state.description,
-            date: this.state.date,
-            mood: this.state.mood
-             
-        }
 
-        console.log(recording);
+        });
+
         
-        axios.post('http://localhost:5000/recordings/add',recording)
-        .then(res => console.log(res.data));
     }
 
     
@@ -132,8 +128,8 @@ export default class CreatePost extends Component {
         
             <div className='post-form'>
               <h2>Post a Moment</h2>
-              <form onSubmit={this.onSubmit}>
               <FileUploader onChangeFile={this.onChangeFile}/>
+              <form onSubmit={this.onSubmit}>
               <br></br>
               <br></br>
                 <label>Username:  </label>

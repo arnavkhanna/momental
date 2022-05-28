@@ -6,11 +6,16 @@ import "./style.css"
 
 const Recording = props => (
     <tr>
+        <td>{props.recording.date.substring(0,10)}</td>
         <td>{props.recording.username}</td>
         <td>{props.recording.title}</td>
         <td>{props.recording.description}</td>
         <td>{props.recording.rating}</td>
-        <td>{props.recording.date.substring(0,10)}</td>
+        <td>{props.recording.file_id && <audio controls>
+        <source src={"https://momental.dev:5000/recordings/audio/"+props.recording.file_id} type="audio/ogg"/>
+        Your browser does not support the audio element.
+        </audio>}
+        </td>
         
 
     </tr>
@@ -25,7 +30,7 @@ export default class RecordingsList extends Component {
     }
 
     componentDidMount() {
-        axios.get('http://localhost:5000/recordings/', Recording)
+        axios.get('https://momental.dev:5000/recordings/', Recording)
           .then(response => {
             this.setState({ recordings: response.data })
           })
@@ -59,6 +64,7 @@ export default class RecordingsList extends Component {
                     <th>Title   </th>
                     <th>Description   </th>
                     <th>Mood   </th>
+                    <th>Recordings   </th>
                   </tr>
                 </thead>
                 <tbody>
