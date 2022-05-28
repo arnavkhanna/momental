@@ -133,6 +133,7 @@ export default class CreatePost extends Component {
               <br></br>
               <br></br>
                 <label>Username:  </label>
+                <br></br>
                 <input
                     type="text"
                     required
@@ -142,6 +143,7 @@ export default class CreatePost extends Component {
               <br></br>
               <br></br>
                 <label>Title:  </label>
+                <br></br>
                 <input
                     type="text"
                     required
@@ -160,8 +162,8 @@ export default class CreatePost extends Component {
                 </div>
                 
                 <br></br>
-                <br></br>
                 <label>Description:  </label>
+                <br></br>
                 <input
                     type="text"
                     required

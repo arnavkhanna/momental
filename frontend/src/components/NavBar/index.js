@@ -17,13 +17,6 @@ const NavBar = (props) =>{
                      </p>
                 </a>
 
-                <a className= "profile_link">
-                    <p style={{color: "#e409a2"}} onClick={()=>navigate("/profile")}>
-                        <span className="iconify" data-icon="bi:prof-fill"></span><br />
-                        <span className="profile"></span><br />
-                    </p>
-                </a>
-
                 <a className= "friends_link" >
                      <p style={{color: "#e409a2"}} onClick={()=>navigate("/friends")}>
                         <span className="iconify" data-icon="bi:frie-fill"></span><br />

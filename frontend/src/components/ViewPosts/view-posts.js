@@ -50,13 +50,13 @@ export default class RecordingsList extends Component {
           <div>
             <NavBar/>
             <div className="top_middle">
-                <h1 className="heading"> Friends </h1>
+                <h1 className="heading"> Feed </h1>
             </div>
             <div className="top_left" >
                  <h2 className="logo">Momental</h2>
             </div> 
             <div className="page-body">
-              <table>
+              <table className = "table-body">
                 <thead>
                   <tr>
                     <th>Date   </th>

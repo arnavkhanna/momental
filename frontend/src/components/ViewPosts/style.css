@@ -64,8 +64,7 @@
     height: 4em;
     left: 30px;
     top: 50px;
-    background: url('https://api.iconify.design/akar-icons/calendar.svg') no-repeat
-    center center / contain;
+    background: url('https://api.iconify.design/akar-icons/calendar.svg?color=%23eee') no-repeat center center / contain;
  }
  
  .profile {
@@ -85,9 +84,8 @@
     width: 4em;
     height: 4em;
     left: 30px;
-    top: 300px;
-    background: url('https://api.iconify.design/fa-solid/user-friends.svg') no-repeat 
-    center center / contain;
+    top: 180px;
+    background: url('https://api.iconify.design/fa-solid/user-friends.svg?color=%23eee') no-repeat center center / contain;
  }
 
  .microphone {
@@ -96,10 +94,8 @@
     width: 4em;
     height: 4em;
     left: 30px;
-    top: 430px;
-    background: url('https://api.iconify.design/fa6-solid/microphone.svg') no-repeat 
-    center center / contain;
-    color: white;
+    top: 310px;
+    background: url('https://api.iconify.design/carbon/microphone.svg?color=%23eee') no-repeat center center / contain;
     
  }
 
@@ -115,8 +111,12 @@
 
  .table-body{
      position: absolute;
-     left:200px;
-     top: 150px;
+     left:50px;
+     top: 100px;
      border-spacing: 40px;
+     text-align: center;
+     white-space: nowrap;
+     overflow: auto;
+     
 
  }

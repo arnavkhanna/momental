@@ -28,7 +28,7 @@ const Recording = () => {
       <button>Record</button>
       <br></br>
       <br></br>
-        <label>Title:  </label>
+      <label>Title:  </label>
         <input
         type="text"
         required
