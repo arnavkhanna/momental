@@ -7,6 +7,7 @@ const recordingSchema = new Schema({
     description: { type: String, required: true }, 
     rating: { type: Number, required: true }, 
     date: { type: Date, required: true },
+    title: {type: String, required: true}
 }, {
     timestamps: true,
 })

@@ -7,14 +7,12 @@
     scroll-padding-top: 4rem;
 } */
 
-.logo{
-    font-family: 'Imprima';
-    font-style: normal;
-    position: relative;
-    color: white;
+.icon{
+    position: absolute;
     text-align: center;
-    top: 20px;
-    font-size: 20px;
+    left: 20px;
+    height: 90px;
+    
 }
 
 .heading{
@@ -39,11 +37,11 @@
 
 .top_middle{
     position: absolute;
-    top: 0px;
-    left: 0px;
+    top: 0;
+    left: 0;
+    right: 0;
     height: 100px;
     background-color: #A4C3C6;
-    width: 1440px;
     text-align: center;
 }
 

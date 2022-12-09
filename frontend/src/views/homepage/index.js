@@ -1,6 +1,7 @@
 import React, {Component} from "react";
 import "./style.css";
 import NavBar from "../../components/NavBar";
+import logo from "../../../src/Momental.png";
 
 import axios from 'axios';
 
@@ -12,8 +13,8 @@ const HomePage = () =>{
               <h1 className="heading"> Home </h1>
            </div>
            <div className="top_left" >
-                <h2 className="logo">Momental</h2>
-           </div>
+                <img className="icon" src={logo}></img>
+            </div>
        </div>
    )
 }

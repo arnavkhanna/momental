@@ -7,15 +7,12 @@
     scroll-padding-top: 4rem;
 } */
 
-.logo{
-    font-family: 'Imprima';
-    font-style: normal;
+.icon{
     position: absolute;
-    color: white;
     text-align: center;
-    top: 30px;
-    left: 15px;
-    font-size: 20px;
+    left: 20px;
+    height: 90px;
+    
 }
 
 .heading{
@@ -40,11 +37,11 @@
 
 .top_middle{
     position: absolute;
-    top: 0px;
-    left: 0px;
+    top: 0;
+    left: 0;
+    right: 0;
     height: 100px;
     background-color: #A4C3C6;
-    width: 1440px;
     text-align: center;
 }
 
@@ -102,8 +99,8 @@
  .page-body{
     display: inline-block;
     position: absolute;
-    left: 200px;
-    top: 100px;
+    left: 100px;
+    top: 50px;
     font-size: 20px;
     border-spacing: 50px, 50px;
     font-family: 'Simonetta';
@@ -115,8 +112,52 @@
      top: 100px;
      border-spacing: 40px;
      text-align: center;
-     white-space: nowrap;
      overflow: auto;
-     
-
  }
+
+ table {
+     table-layout: fixed;
+ }
+
+ td {
+    word-wrap: break-word;
+    overflow-wrap: break-word;
+    padding: 4px 8px;
+ }
+
+
+ .date {
+    min-width: 200px;
+    max-width: 200px;
+ }
+
+ .title {
+    min-width: 200px;
+    max-width: 200px;
+}
+
+.description div{
+    min-width:450px;
+    max-width: 450px;
+    overflow-y: auto;
+    max-height: 100px;
+}
+
+.rating {
+    min-width: 50px;
+    max-width: 50px;
+}
+
+.username {
+    min-width: 150px;
+    max-width: 150px;
+}
+
+
+.recording {
+    min-width: 200px
+}
+
+
+
+

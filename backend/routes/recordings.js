@@ -14,12 +14,14 @@ router.route('/add').post((req, res) => {
   const description = req.body.description;
   const rating = Number(req.body.rating);
   const date = Date.parse(req.body.date);
+  const title = req.body.title;
 
   const newRecording = new Recording({
       username,
       description, 
       rating, 
       date,
+      title
     });
 
   newRecording.save()

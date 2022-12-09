@@ -3,15 +3,16 @@ import axios from 'axios';
 import NavBar from "../../components/NavBar";
 import { useTable } from "react-table";
 import "./style.css"
+import logo from "../../../src/Momental.png";
 
 const Recording = props => (
     <tr>
-        <td>{props.recording.date.substring(0,10)}</td>
-        <td>{props.recording.username}</td>
-        <td>{props.recording.title}</td>
-        <td>{props.recording.description}</td>
-        <td>{props.recording.rating}</td>
-        <td>{props.recording.file_id && <audio controls>
+        <td class="date">{props.recording.date.substring(0,10)}</td>
+        <td class="username">{props.recording.username}</td>
+        <td class="title">{props.recording.title}</td>
+        <td class="description"><div>{props.recording.description}</div></td>
+        <td class="rating">{props.recording.rating}</td>
+        <td class="recording">{props.recording.file_id && <audio controls preload="none">
         <source src={"https://momental.dev:5000/recordings/audio/"+props.recording.file_id} type="audio/ogg"/>
         Your browser does not support the audio element.
         </audio>}
@@ -53,18 +54,18 @@ export default class RecordingsList extends Component {
                 <h1 className="heading"> Feed </h1>
             </div>
             <div className="top_left" >
-                 <h2 className="logo">Momental</h2>
-            </div> 
+                <img className="icon" src={logo}></img>
+              </div>
             <div className="page-body">
               <table className = "table-body">
                 <thead>
                   <tr>
-                    <th>Date   </th>
-                    <th>Username   </th>
-                    <th>Title   </th>
-                    <th>Description   </th>
-                    <th>Mood   </th>
-                    <th>Recordings   </th>
+                    <th class="date">Date</th>
+                    <th class="username">Username</th>
+                    <th class="title">Title</th>
+                    <th class="description">Description</th>
+                    <th class="rating">Mood</th>
+                    <th class="recording">Recordings</th>
                   </tr>
                 </thead>
                 <tbody>

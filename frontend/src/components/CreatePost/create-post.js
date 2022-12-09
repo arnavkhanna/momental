@@ -5,6 +5,7 @@ import "react-datepicker/dist/react-datepicker.css";
 import "./style.css"
 import axios from 'axios';
 import FileUploader from "./FileUploader.js";
+import logo from "../../../src/Momental.png";
 
 export default class CreatePost extends Component {
     constructor(props) {
@@ -17,6 +18,7 @@ export default class CreatePost extends Component {
         this.onChangeDate = this.onChangeDate.bind(this);
         this.onSubmit = this.onSubmit.bind(this);
 
+
         //this.fileUpload.bind(this);
 
         this.state = {
@@ -26,6 +28,8 @@ export default class CreatePost extends Component {
             description: "", 
             date: new Date(),
             mood: 1,
+            submitted: false,
+            message: null
             //audio: []
         }
 
@@ -39,7 +43,7 @@ export default class CreatePost extends Component {
     }
 
     fileUpload(file, callback) {
-        const url = "http://momental.dev:5000/recordings/upload"
+        const url = "https://momental.dev:5000/recordings/upload"
         const formData = new FormData();
         formData.append('file', file)
         const config = {
@@ -48,7 +52,7 @@ export default class CreatePost extends Component {
             }
         }
         
-        axios.post('http://momental.dev:5000/recordings/upload', formData, config)
+        axios.post('https://momental.dev:5000/recordings/upload', formData, config)
         .then(res => {
             console.log(res.data)
             callback(res.data);
@@ -89,7 +93,9 @@ export default class CreatePost extends Component {
 
     onSubmit(e) {
         e.preventDefault();
-
+        this.setState({
+            submitted: true
+          })
         this.fileUpload(this.state.file, (data) => {
             const recording = {
                 file: this.state.file,
@@ -104,8 +110,25 @@ export default class CreatePost extends Component {
     
             console.log(recording);
             
-            axios.post('http://momental.dev:5000/recordings/add',recording)
-            .then(res => console.log(res.data));
+            axios.post('https://momental.dev:5000/recordings/add',recording)
+            .then(res => {
+                document.getElementById("recordingForm").reset();
+                this.setState({
+                    file: null,
+                    username: "",
+                    title: "",
+                    description: "", 
+                    date: new Date(),
+                    mood: 1,
+                    submitted: false,
+                    message: "Post successfully submitted"
+                })
+                
+                
+
+
+                console.log(res.data)
+            });
 
 
         });
@@ -119,20 +142,23 @@ export default class CreatePost extends Component {
         return (
             <>
             <NavBar/>
+            
             <div className="top_middle">
                 <h1 className="heading"> Recording </h1>
             </div>
             <div className="top_left" >
-                <h2 className="logo">Momental</h2>
+                <img className="icon" src={logo}></img>
               </div>
         
             <div className='post-form'>
+              {this.state.message && <h3>{this.state.message}</h3>}
               <h2>Post a Moment</h2>
+              
+              <form onSubmit={this.onSubmit} name="recordingForm" id="recordingForm">
               <FileUploader onChangeFile={this.onChangeFile}/>
-              <form onSubmit={this.onSubmit}>
               <br></br>
               <br></br>
-                <label>Username:  </label>
+                <label>Username:</label>
                 <br></br>
                 <input
                     type="text"
@@ -142,7 +168,7 @@ export default class CreatePost extends Component {
                 />
               <br></br>
               <br></br>
-                <label>Title:  </label>
+                <label>Title:</label>
                 <br></br>
                 <input
                     type="text"
@@ -153,19 +179,20 @@ export default class CreatePost extends Component {
                 <br></br>
                 <br></br>
 
-                <label>Date: </label>
+                <label>Date:</label>
                 <div>
-                    <DatePicker
+                    <DatePicker maxDate = {new Date()}
                     selected={this.state.date}
                     onChange={this.onChangeDate}
                     />
                 </div>
                 
                 <br></br>
-                <label>Description:  </label>
+                <label>Description:</label>
                 <br></br>
-                <input
-                    type="text"
+                <textarea
+                    cols="50"
+                    rows="3"
                     required
                     value={this.state.description}
                     onChange={this.onChangeDescription}
@@ -192,7 +219,7 @@ export default class CreatePost extends Component {
                     
                   <br></br>
                   <br></br>
-                <button>Post</button>
+                <button disabled = {this.state.submitted}>{this.state.submitted ? "Posting" : "Post"}</button>
               </form>
               
             </div>

@@ -21,7 +21,7 @@ const FileUploader = props => {
 
       <input
         type="file"
-        
+        accept="audio/mp3, audio/mp4, audio/ogg, audio/m4a, audio/m4b, audio/wav, audio/ogg"
         onChange={handleChange}
         
       />

@@ -3,6 +3,7 @@ import "./style.css";
 import NavBar from "../../components/NavBar"
 import Calendar from 'react-calendar'
 import 'react-calendar/dist/Calendar.css';
+import logo from "../../../src/Momental.png";
 
 const MyCalendar = () =>{
     return(
@@ -12,7 +13,7 @@ const MyCalendar = () =>{
                 <h1 className="heading"> Calendar </h1>
             </div>
             <div className="top_left" >
-                 <h2 className="logo">Momental</h2>
+                <img className="icon" src={logo}></img>
             </div>
             <div className = "cal">
                 <Calendar/>
